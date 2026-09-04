@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="mlyuKtDMOhZ2x2lMrqr-MHT9LeUW8i6uEJw1Sv6AzNY" />
+<title>Prueba Pública · Microservicios OSINT</title>
+<meta name="description" content="Landing de desarrollo de microservicios OSINT. Primer servicio: reparto de lotería verificable con cadena de hashes, comprobantes privados QR/PDF y aceptación electrónica.">
+<meta property="og:title" content="Prueba Pública · Microservicios OSINT">
+<meta property="og:description" content="Desarrollo de microservicios OSINT. Primer servicio: reparto de lotería verificable.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Prueba Pública","url":"https://pruebapublica.com"}
+</script>
+<style>
+:root{--bg:#0B0F17;--bg-panel:#121826;--bg-panel-2:#171F30;--line:#232B3D;--text:#E7EBF3;--text-dim:#8993A8;--text-faint:#576076;--amber:#FFB454;--green:#34D399;--hover-border:#6b5a3a;--sans:"Inter",-apple-system,sans-serif;--mono:"IBM Plex Mono",monospace}
+:root[data-theme="light"]{--bg:#F4F6FB;--bg-panel:#FFFFFF;--bg-panel-2:#EAEEF6;--line:#D6DDEA;--text:#16202E;--text-dim:#5B6B84;--text-faint:#8A97AC;--amber:#D9820A;--green:#0E9F6E;--hover-border:#B0894B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:32px 24px 60px}
+.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.brand{font-family:var(--mono);font-size:13px;display:flex;align-items:center;gap:8px}
+.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.top-right{display:flex;align-items:center;gap:14px}
+.theme-btn{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--text-dim);background:var(--bg-panel);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.theme-btn:hover{color:var(--amber);border-color:var(--hover-border)}
+.hero{text-align:center;padding:26px 0 40px}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan,#67E8F9);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:38px;line-height:1.15;font-weight:800;margin-bottom:16px;letter-spacing:-.02em}
+.hero p{font-size:16px;color:var(--text-dim);max-width:640px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-top:10px}
+.sechead{margin-top:38px;margin-bottom:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);border:1px solid var(--hover-border);border-radius:999px;padding:3px 12px}
+.sechead h2{font-size:21px;font-weight:700;color:var(--text)}
+.card-soon{opacity:.65;border-style:dashed;cursor:default}
+.card-soon:hover{border-color:var(--line);transform:none}
+.soon-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);border:1px dashed var(--text-faint);border-radius:8px;padding:6px 14px}
+.card-soon:hover .soon-tag{color:var(--text-dim)}
+.card{display:block;background:var(--bg-panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--text);transition:border-color .15s ease,transform .15s ease}
+.card:hover{border-color:var(--hover-border);transform:translateY(-2px)}
+.thumb{position:relative;height:150px;background:var(--bg-panel-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.body{padding:16px 18px 18px}
+.svc{font-size:13px;font-weight:700;margin-bottom:6px}
+h3{font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.3}
+.desc{font-size:13px;color:var(--text-dim);margin-bottom:14px}
+.foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px}
+.src{color:var(--text-faint)}
+.cta{color:var(--amber);font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+.foot-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.foot-links a{color:var(--text-dim);text-decoration:none}
+.foot-links a:hover{color:var(--amber)}
+.ko-fi{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:13px;color:#fff;background:#13C3A5;border-radius:7px;padding:9px 16px;text-decoration:none;margin-top:4px}
+.ko-fi:hover{filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="dot"></span> pruebapublica.com</div>
+    <div class="top-right">
+      <button class="theme-btn" onclick="toggleTheme()"><span id="theme-ico">☀️</span> <span id="theme-txt">claro</span></button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Análisis público · Herramientas verificables</div>
+    <h1>Prueba Pública</h1>
+    <p>Análisis independiente del poder y herramientas cívicas con prueba verificable. Cada servicio es un nodo propio, con su dominio y su ciclo de vida.</p>
+  </div>
+
+  <div class="sechead"><span class="sec-tag">Análisis</span><h2>Lectura crítica, sin filiación</h2></div>
+  <div class="grid">
+    <a class="card" href="https://analisis.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://analisis.pruebapublica.com/og-preview.png" alt="Análisis · blog de geopolítica" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">📰 Análisis · Geopolítica y política</div>
+        <h3>Blog de análisis crítico del poder</h3>
+        <div class="desc">Contexto, datos y lectura crítica de la actualidad. Se examina a todos los poderes por igual: Estados, gobiernos, empresas y medios.</div>
+        <div class="foot"><span class="src">geopolítica · poder · sin filiación</span><span class="cta">Leer los análisis →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://fimi.viajeinteligencia.com" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://fimi.viajeinteligencia.com/og-preview.png" alt="FIMI Radar · desinformación e influencers" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">📡 FIMI Radar · Desinformación e influencers</div>
+        <h3>Radar OSINT de campañas de influencia</h3>
+        <div class="desc">Detecta coordinación, amplificación y anomalías en prensa y redes sobre frontera sur, UE-Marruecos y política nacional. Sin atribución sin evidencia, alertas por Telegram y email.</div>
+        <div class="foot"><span class="src">OSINT · frontera sur · UE-Marruecos · política</span><span class="cta">Abrir el radar →</span></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="sechead"><span class="sec-tag">Herramientas</span><h2>Utilidades con garantía</h2></div>
+  <div class="grid">
+    <a class="card" href="https://loteria-hash.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://loteria-hash.pruebapublica.com/assets/og-preview.png" alt="Reparto de lotería verificable" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">🎟️ Reparto de lotería verificable</div>
+        <h3>Registro de participaciones con hash-chain</h3>
+        <div class="desc">Deja el reparto de un décimo o sorteo compartido por escrito: cadena de hashes, comprobante privado con QR y PDF, y aceptación electrónica del partícipe.</div>
+        <div class="foot"><span class="src">hash-chain · QR/PDF · PWA</span><span class="cta">Dejar el reparto →</span></div>
+      </div>
+    </a>
+    <a class="card card-soon" href="#" onclick="return false;">
+      <div class="thumb"><div class="soon-tag">Próximamente</div></div>
+      <div class="body">
+        <div class="svc">🔧 Más herramientas</div>
+        <h3>El ecosistema crece</h3>
+        <div class="desc">Nuevos servicios cívicos y de análisis en camino. Cada uno con su propio dominio y su propia garantía de verificabilidad.</div>
+        <div class="foot"><span class="src">en desarrollo</span><span class="cta">—</span></div>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <div class="foot-links">
+      <a href="/about.html">About</a>
+      <a href="mailto:info@pruebapublica.com">info@pruebapublica.com</a>
+      <a href="https://x.com/pruebapublicaX" target="_blank" rel="noopener noreferrer">X · @pruebapublicaX</a>
+      <a href="https://bsky.app/profile/pruebapublica.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky · @pruebapublica.bsky.social</a>
+    </div>
+    <a class="ko-fi" href="https://ko-fi.com/m_castillo" target="_blank" rel="noopener noreferrer">☕ Invítame a un café</a>
+    <p style="margin-top:18px;color:var(--text-faint)">Prueba Pública · Microservicios OSINT · 2026</p>
+  </footer>
+</div>
+<script>
+function toggleTheme(){
+  var root=document.documentElement;
+  var dark=root.getAttribute('data-theme')!=='light';
+  root.setAttribute('data-theme', dark?'light':'dark');
+  document.getElementById('theme-ico').textContent = dark?'🌙':'☀️';
+  document.getElementById('theme-txt').textContent = dark?'oscuro':'claro';
+  try{localStorage.setItem('tema', dark?'light':'dark');}catch(e){}
+}
+try{
+  var t=localStorage.getItem('tema');
+  if(t==='light'){document.documentElement.setAttribute('data-theme','light');document.getElementById('theme-ico').textContent='🌙';document.getElementById('theme-txt').textContent='oscuro';}
+}catch(e){}
+</script>
+</body>
+</html>
