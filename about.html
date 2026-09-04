@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sobre Prueba Pública · Microservicios OSINT</title>
+<meta name="description" content="Prueba Pública es el espacio de microservicios tipo OSINT: análisis geopolítico, registro verificable de participaciones y más. Datos abiertos, sin cuenta y sin rastreo.">
+<meta property="og:title" content="Sobre Prueba Pública">
+<meta property="og:description" content="Microservicios OSINT independientes: análisis geopolítico y herramientas verificables. Datos abiertos, sin cuenta.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#0B0F17;--bg-panel:#121826;--bg-panel-2:#171F30;--line:#232B3D;--text:#E7EBF3;--text-dim:#8993A8;--text-faint:#576076;--amber:#FFB454;--green:#34D399;--cyan:#67E8F9;--sans:"Inter",-apple-system,sans-serif;--mono:"IBM Plex Mono",monospace}
+:root[data-theme="light"]{--bg:#F4F6FB;--bg-panel:#FFFFFF;--bg-panel-2:#EAEEF6;--line:#D6DDEA;--text:#16202E;--text-dim:#5B6B84;--text-faint:#8A97AC;--amber:#D9820A;--green:#0E9F6E;--cyan:#0E9FAE}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:40px 24px 60px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+.brand{font-family:var(--mono);font-size:13px;display:flex;align-items:center;gap:8px}
+.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.theme-btn{font-family:var(--mono);font-size:12px;color:var(--text-dim);background:var(--bg-panel);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+h1{font-size:32px;font-weight:800;margin-bottom:10px;letter-spacing:-.02em;line-height:1.2}
+.lead{color:var(--text-dim);font-size:16px;margin-bottom:26px}
+h2{font-size:19px;font-weight:700;margin:28px 0 8px;color:var(--amber)}
+p{color:var(--text-dim);font-size:15px;margin-bottom:12px}
+a{color:var(--amber);text-decoration:none}
+a:hover{text-decoration:underline}
+.card-list{margin:16px 0}
+.svc{display:block;background:var(--bg-panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;text-decoration:none;color:var(--text);transition:border-color .15s ease,transform .15s ease}
+.svc:hover{border-color:var(--amber);transform:translateY(-1px)}
+.svc .name{font-weight:700;font-size:15px;margin-bottom:4px}
+.svc .desc{color:var(--text-dim);font-size:13.5px}
+.svc .cta{color:var(--amber);font-weight:600;font-size:13px;margin-top:6px;display:inline-block}
+.back{font-family:var(--mono);font-size:12px;display:inline-block;margin-top:26px;color:var(--text-faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="dot"></span> pruebapublica.com · about</div>
+    <button class="theme-btn" onclick="toggleTheme()"><span id="t-ico">☀️</span> <span id="t-txt">claro</span></button>
+  </div>
+
+  <h1>Sobre Prueba Pública</h1>
+  <p class="lead">El espacio de microservicios OSINT independientes. Datos abiertos, herramientas verificables y análisis sin filiación.</p>
+
+  <p><b>Prueba Pública</b> es el lugar donde viven los proyectos de inteligencia y análisis del ecosistema, separados de viajeinteligencia.com. Cada microservicio tiene su propio subdominio, su propio ciclo de vida y su propia política de datos. Juntos forman un banco de pruebas abierto: gratis, sin cuenta y sin rastreo.</p>
+
+  <h2>Qué encontrarás aquí</h2>
+  <div class="card-list">
+
+    <a class="svc" href="https://analisis.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="name">📰 Análisis · Geopolítica y análisis político</div>
+      <div class="desc">Un blog de geopolítica y análisis político: contexto, datos y lectura crítica de la actualidad, sin filiación partidista. Artículos con fuentes, comentarios moderados y un diseño editorial sobrio.</div>
+      <span class="cta">Leer los análisis →</span>
+    </a>
+
+    <a class="svc" href="https://loteria-hash.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="name">🎟️ Registro verificable de participaciones</div>
+      <div class="desc">Deja el reparto de un décimo o sorteo compartido por escrito: cadena de hashes, comprobante privado con QR y PDF, y aceptación electrónica del partícipe. Sin custodiar dinero ni boletos.</div>
+      <span class="cta">Crear un registro →</span>
+    </a>
+
+  </div>
+
+  <h2>Principios</h2>
+  <p>Datos de fuentes oficiales, gratis, sin cuenta y sin rastreo. Cada servicio es independiente: si uno cae, los demás siguen en pie. La privacidad se diseña por defecto — no se publica lo que puede ser privado.</p>
+
+  <h2>Contacto</h2>
+  <p>Escríbenos a <a href="mailto:info@pruebapublica.com">info@pruebapublica.com</a>.</p>
+  <p>
+    X: <a href="https://x.com/pruebapublicaX" target="_blank" rel="noopener noreferrer">@pruebapublicaX</a> ·
+    Bluesky: <a href="https://bsky.app/profile/pruebapublica.bsky.social" target="_blank" rel="noopener noreferrer">@pruebapublica.bsky.social</a>
+  </p>
+
+  <a class="back" href="/">← Volver a la vitrina</a>
+</div>
+<script>
+function toggleTheme(){
+  var root=document.documentElement;
+  var dark=root.getAttribute('data-theme')!=='light';
+  root.setAttribute('data-theme', dark?'light':'dark');
+  document.getElementById('t-ico').textContent=dark?'🌙':'☀️';
+  document.getElementById('t-txt').textContent=dark?'oscuro':'claro';
+  try{localStorage.setItem('tema', dark?'light':'dark');}catch(e){}
+}
+try{
+  var t=localStorage.getItem('tema');
+  if(t==='light'){document.documentElement.setAttribute('data-theme','light');document.getElementById('t-ico').textContent='🌙';document.getElementById('t-txt').textContent='oscuro';}
+}catch(e){}
+</script>
+</body>
+</html>
