@@ -55,6 +55,20 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text
 .foot-links a:hover{color:var(--amber)}
 .ko-fi{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:13px;color:#fff;background:#13C3A5;border-radius:7px;padding:9px 16px;text-decoration:none;margin-top:4px}
 .ko-fi:hover{filter:brightness(1.1)}
+/* Barra "LOG EN VIVO": marquee con últimos análisis + señales FIMI */
+.ticker-shell{background:var(--bg-panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 34px}
+.ticker-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--text-faint)}
+.ticker-head .live{color:var(--green);display:flex;align-items:center;gap:6px;font-weight:600}
+.ticker-head .live .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.4s infinite}
+.ticker-body{font-family:var(--mono);font-size:12.5px;color:var(--text-dim);padding:11px 14px;white-space:nowrap;overflow:hidden;position:relative}
+.ticker-track{display:inline-block;animation:scroll 45s linear infinite}
+.ticker-body:hover .ticker-track{animation-play-state:paused}
+.ticker-track a{color:var(--text-dim);text-decoration:none;margin-right:38px}
+.ticker-track a:hover{color:var(--amber)}
+.ticker-track .lbl{color:#67E8F9;font-weight:600}
+.ticker-track .lbl.fimi{color:var(--amber)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 </style>
 </head>
 <body>
@@ -70,6 +84,19 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text
     <div class="eyebrow">Análisis público · Herramientas verificables</div>
     <h1>Prueba Pública</h1>
     <p>Análisis independiente del poder y herramientas cívicas con prueba verificable. Cada servicio es un nodo propio, con su dominio y su ciclo de vida.</p>
+  </div>
+
+  <div class="ticker-shell">
+    <div class="ticker-head">
+      <span class="live"><span class="dot"></span> LOG EN VIVO</span>
+      <span>análisis · fimi radar</span>
+    </div>
+    <div class="ticker-body">
+      <div class="ticker-track" id="tickerTrack">
+        <a href="https://analisis.pruebapublica.com" target="_blank" rel="noopener noreferrer"><span class="lbl">[ANÁLISIS]</span> Lectura crítica del poder, sin filiación</a>
+        <a href="https://fimi.viajeinteligencia.com" target="_blank" rel="noopener noreferrer"><span class="lbl fimi">[FIMI]</span> Radar OSINT de desinformación en vivo</a>
+      </div>
+    </div>
   </div>
 
   <div class="sechead"><span class="sec-tag">Análisis</span><h2>Lectura crítica, sin filiación</h2></div>
@@ -140,6 +167,20 @@ try{
   var t=localStorage.getItem('tema');
   if(t==='light'){document.documentElement.setAttribute('data-theme','light');document.getElementById('theme-ico').textContent='🌙';document.getElementById('theme-txt').textContent='oscuro';}
 }catch(e){}
+// LOG EN VIVO: rellena la barra con los últimos análisis (blog) y señales FIMI.
+fetch('/live.json').then(function(r){return r.json();}).then(function(d){
+  var track=document.getElementById('tickerTrack');
+  if(!track||!d||!d.items||!d.items.length) return;
+  var mk=function(i){
+    var cls=(i.label==='FIMI')?'lbl fimi':'lbl';
+    var meta=i.meta?' · '+i.meta:'';
+    return '<a href="'+i.url+'" target="_blank" rel="noopener noreferrer"><span class="'+cls+'">['+i.label+']</span> '+i.text+meta+'</a>';
+  };
+  var html=d.items.map(mk).join('')+d.items.map(mk).join('');
+  track.innerHTML=html;
+  var head=document.querySelector('.ticker-head .live');
+  if(head) head.innerHTML='<span class="dot"></span> LOG EN VIVO · '+d.items.length+' señales';
+}).catch(function(){});
 </script>
 </body>
 </html>
