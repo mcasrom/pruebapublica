@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pruebapublica.com/sitemap.xml
+Sitemap: https://www.pruebapublica.com/sitemap.xml
