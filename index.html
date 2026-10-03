@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 .hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan,#67E8F9);font-weight:600;margin-bottom:14px}
 .hero h1{font-size:38px;line-height:1.15;font-weight:800;margin-bottom:16px;letter-spacing:-.02em}
 .hero p{font-size:16px;color:var(--text-dim);max-width:640px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.grid{grid-template-columns:1fr}}
 .sechead{margin-top:38px;margin-bottom:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .sec-tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);border:1px solid var(--hover-border);border-radius:999px;padding:3px 12px}
 .sechead h2{font-size:21px;font-weight:700;color:var(--text)}
@@ -97,11 +97,13 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text
       <div class="ticker-track" id="tickerTrack">
         <a href="https://analisis.pruebapublica.com" target="_blank" rel="noopener noreferrer"><span class="lbl">[ANÁLISIS]</span> Lectura crítica del poder, sin filiación</a>
         <a href="https://fimi.viajeinteligencia.com" target="_blank" rel="noopener noreferrer"><span class="lbl fimi">[FIMI]</span> Radar OSINT de desinformación en vivo</a>
+        <a href="https://vivienda.pruebapublica.com" target="_blank" rel="noopener noreferrer"><span class="lbl">[VIVIENDA]</span> Precio del alquiler y desahucios, con fuente</a>
+        <a href="https://agenda.pruebapublica.com/?utm_source=pruebapublica&utm_medium=ticker&utm_campaign=agenda" target="_blank" rel="noopener noreferrer"><span class="lbl">[AGENDA]</span> Tu agenda local, sin cuenta ni rastreo</a>
       </div>
     </div>
   </div>
 
-  <div class="sechead"><span class="sec-tag">Análisis</span><h2>Lectura crítica, sin filiación</h2></div>
+  <div class="sechead"><span class="sec-tag">Ecosistema</span><h2>Servicios públicos verificables</h2></div>
   <div class="grid">
     <a class="card" href="https://analisis.pruebapublica.com" target="_blank" rel="noopener noreferrer">
       <div class="thumb"><img src="https://analisis.pruebapublica.com/og-preview.png" alt="Análisis · blog de geopolítica" loading="lazy"></div>
@@ -121,10 +123,24 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text
         <div class="foot"><span class="src">OSINT · frontera sur · UE-Marruecos · política</span><span class="cta">Abrir el radar →</span></div>
       </div>
     </a>
-  </div>
-
-  <div class="sechead"><span class="sec-tag">Herramientas</span><h2>Utilidades con garantía</h2></div>
-  <div class="grid">
+    <a class="card" href="https://vivienda.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://vivienda.pruebapublica.com/og.png?v=2" alt="Observatorio de la vivienda · datos oficiales" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">🏠 Vivienda · Datos oficiales</div>
+        <h3>Observatorio de la vivienda</h3>
+        <div class="desc">Precio del alquiler por municipio, evolución de precios (INE), decretos (BOE) y lanzamientos/desahucios por CCAA (CGPJ), con mapa de calor y comparador. Solo hechos, con fuente y fecha. Sin puntuaciones ni atribuciones.</div>
+        <div class="foot"><span class="src">INE · CGPJ · BOE · €/m² · desahucios</span><span class="cta">Ver los datos →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://vivienda.pruebapublica.com" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://vivienda.pruebapublica.com/og.png?v=2" alt="Mapa de calor y comparador de vivienda" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">🗺️ Mapa y comparador</div>
+        <h3>¿Cuánto cuesta el alquiler donde vives?</h3>
+        <div class="desc">Mapa de calor por provincia y comparador España↔comunidad autónoma. Piso de 80 m², €/m² y lanzamientos judiciales por CCAA.</div>
+        <div class="foot"><span class="src">mapa · comparador · por CCAA</span><span class="cta">Abrir el mapa →</span></div>
+      </div>
+    </a>
     <a class="card" href="https://loteria-hash.pruebapublica.com" target="_blank" rel="noopener noreferrer">
       <div class="thumb"><img src="https://loteria-hash.pruebapublica.com/assets/og-preview.png" alt="Reparto de lotería verificable" loading="lazy"></div>
       <div class="body">
@@ -132,6 +148,15 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 10px;text
         <h3>Registro de participaciones con hash-chain</h3>
         <div class="desc">Deja el reparto de un décimo o sorteo compartido por escrito: cadena de hashes, comprobante privado con QR y PDF, y aceptación electrónica del partícipe.</div>
         <div class="foot"><span class="src">hash-chain · QR/PDF · PWA</span><span class="cta">Dejar el reparto →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://agenda.pruebapublica.com/?utm_source=pruebapublica&utm_medium=card&utm_campaign=agenda" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="https://agenda.pruebapublica.com/icons/og.png" alt="Agenda personal local-first · tus datos se quedan en tu navegador" loading="lazy"></div>
+      <div class="body">
+        <div class="svc">🗓️ Agenda · Local-first</div>
+        <h3>Agenda personal, sin registro</h3>
+        <div class="desc">Planifica el día, escribe notas, ideas y diario. Sin cuenta ni registro: todo se guarda en tu navegador y no se envía a ningún servidor. Exporta a JSON, Markdown y Org-mode y funciona sin conexión.</div>
+        <div class="foot"><span class="src">local-first · PWA · sin cuenta · sin rastreo</span><span class="cta">Abrir la agenda →</span></div>
       </div>
     </a>
     <a class="card card-soon" href="#" onclick="return false;">
