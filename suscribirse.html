@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recibir avisos por email · Prueba Pública</title>
+<meta name="description" content="Una sola lista, con etiquetas por servicio. Elige qué quieres recibir. Doble confirmación y baja en un clic.">
+<link rel="canonical" href="https://www.pruebapublica.com/suscribirse.html">
+<meta name="robots" content="index,follow">
+<style>
+:root{--navy:#0f2742;--ink:#15202b;--muted:#667085;--line:#dfe5eb;--bg:#f6f8fa;--card:#fff;--accent:#e8a33a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{width:min(860px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:8px 0 18px;margin-bottom:26px}
+.brand{font-weight:800;color:var(--navy);text-decoration:none}.brand small{display:block;color:var(--muted);font:600 10px/1.4 system-ui;letter-spacing:.1em;text-transform:uppercase}
+.back{font-size:13px;color:var(--muted);text-decoration:none}.back:hover{color:var(--navy)}
+main{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,4vw,40px);box-shadow:0 8px 24px #0f27420a}
+.eyebrow{color:#0a5c45;font:800 11px/1.4 system-ui;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+h1{font:800 clamp(30px,5vw,44px)/1.08 Georgia,serif;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:17px;max-width:680px}
+fieldset{border:0;padding:0;margin:26px 0 0}.legend{font-weight:800;margin-bottom:10px}
+.tags{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tag{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--line);border-radius:9px;padding:10px 11px;background:#fbfcfd;cursor:pointer}
+.tag input{margin-top:4px}.tag b{display:block;font-size:13px}.tag span{display:block;font-size:11px;color:var(--muted);line-height:1.35}
+.form{margin-top:24px}.form label{display:block;font-weight:700;font-size:13px;margin-bottom:6px}
+.form input[type=email]{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 13px;font:inherit;background:#fff;color:var(--ink)}
+.form button{margin-top:12px;border:0;border-radius:9px;background:var(--navy);color:#fff;padding:12px 16px;font:800 13px system-ui;cursor:pointer}
+.form button:hover{background:#183b5e}.note{font-size:12px;color:var(--muted);margin:12px 0 0}.msg{margin-top:14px;font-weight:700}.msg.ok{color:#0f6b4f}.msg.err{color:#9f2f2f}
+footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+html[data-theme="dark"] body{background:#0b1422;color:#e7eef7}html[data-theme="dark"] main{background:#121f31;border-color:#2a3b50}html[data-theme="dark"] .tag{background:#0f1b2b;border-color:#2a3b50}html[data-theme="dark"] .form input{background:#0f1b2b;color:#e7eef7;border-color:#2a3b50}html[data-theme="dark"] .brand,html[data-theme="dark"] h1{color:#a8d1ff}
+@media(max-width:650px){.tags{grid-template-columns:1fr}header{display:block}.back{display:inline-block;margin-top:8px}}
+</style>
+<script>try{var t=localStorage.getItem("compromiso-tema");document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}catch(e){}</script>
+</head><body><div class="wrap">
+<header><a class="brand" href="/">Prueba Pública<small>Observatorio · lista única</small></a><a class="back" href="/">← Volver</a></header>
+<main>
+<p class="eyebrow">Avisos por email · sin ruido</p><h1>Recibe solo lo que te interesa.</h1>
+<p class="lead">Una sola lista, con etiquetas por servicio. Elige los temas, confirma tu correo y date de baja cuando quieras. Sin cookies ni rastreo publicitario.</p>
+<form id="subs" class="form">
+<fieldset><div class="legend">¿Qué quieres recibir?</div><div class="tags">
+<label class="tag"><input type="checkbox" name="tag" value="municipal" checked><span><b>Municipal</b><span>Alquiler y datos por municipio</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="analisis"><span><b>Análisis</b><span>Blog de geopolítica y poder</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="29n"><span><b>29N</b><span>Observatorio electoral</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="viaje"><span><b>Viaje / radar</b><span>Datos de viaje y emergencias</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="nearme"><span><b>NearMe</b><span>Datos de España en vivo</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="fimi"><span><b>FIMI</b><span>Amplificación y desinformación</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="vivienda"><span><b>Vivienda</b><span>Datos oficiales de vivienda</span></span></label>
+<label class="tag"><input type="checkbox" name="tag" value="cumplimiento"><span><b>Cumplimiento</b><span>Promesas electorales</span></span></label>
+</div></fieldset>
+<label for="email">Tu correo</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+<button type="submit">Recibir avisos</button>
+<p class="note">Doble confirmación: te enviaré un correo para confirmar. No comparto tu dirección. Baja en un clic.</p>
+<div id="msg" class="msg" role="status"></div>
+</form>
+<p class="note">También puedes seguir por <a href="https://mastodon.social/@viajeinteligencia">Mastodon</a>, <a href="https://bsky.app/profile/viajeinteligencia.bsky.social">Bluesky</a> o el <a href="https://t.me/observatorio_amp">canal de Telegram</a>.</p>
+</main><footer>Prueba Pública · datos abiertos · sin cookies</footer>
+</div><script>
+(() => {
+  const params = new URLSearchParams(location.search);
+  const pre = params.get('service');
+  if (pre) document.querySelectorAll('input[name=tag]').forEach(i => { i.checked = i.value === pre; });
+  const form = document.getElementById('subs');
+  const msg = document.getElementById('msg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    const tags = [...form.querySelectorAll('input[name=tag]:checked')].map(i => i.value);
+    msg.className = 'msg'; msg.textContent = 'Enviando…';
+    try {
+      const r = await fetch('/api/subscribe', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, tags, source:'hub', page: location.pathname})});
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || 'No se pudo completar');
+      msg.className = 'msg ok'; msg.textContent = d.already ? 'Ya estabas en la lista.' : 'Revisa tu correo para confirmar la suscripción.';
+      form.reset();
+    } catch (err) { msg.className = 'msg err'; msg.textContent = err.message || 'Error de conexión.'; }
+  });
+})();
+</script></body></html>
